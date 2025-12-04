@@ -7,5 +7,5 @@ async function readTextFileNode(filename) {
 
 async function test(elementId){
     let element=document.getElementById(elementId);
-    element.textContent = await readTextFileNode('kioTxt');
+    element.textContent = await readTextFileNode('kioTxt.txt');
 }
