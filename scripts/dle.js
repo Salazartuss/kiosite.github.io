@@ -31,9 +31,9 @@ function mainGameLoop(){
     const guessText = document.getElementById('guess');
     const answerText = document.getElementById('soluce');
     loadV2().then(data => {
-        document.getElementById('gameStart').innerHTML = "";
         gameSoluce.then(
             soluces =>{
+                document.getElementById('gameStart').innerHTML = "";
                 const soluceValue = Object.keys(data)[soluces];
                 tryButton.addEventListener("click", function() {
 
