@@ -25,12 +25,13 @@ function verif(receivedValue, soluceValue){
 
 
 function mainGameLoop(){
-    document.getElementById('gameStart').innerHTML = "";
+
     var win = false;
     const tryButton = document.getElementById('tryButton');
     const guessText = document.getElementById('guess');
     const answerText = document.getElementById('soluce');
     loadV2().then(data => {
+        document.getElementById('gameStart').innerHTML = "";
         gameSoluce.then(
             soluces =>{
                 const soluceValue = Object.keys(data)[soluces];
