@@ -27,7 +27,7 @@ function result(){
                 const keyData = data[dasKeys[name]];
                 if(!keyData){return;}
 
-                let htmlContent = '<p>' + keyData[0]  + " " + name + " " + keyData[1]+ " " + keyData[2] +'</p>';
+                let htmlContent = '<p>' + keyData[0]  +  " " + keyData[1]+ " " + keyData[2] +'</p>';
                 place.innerHTML = htmlContent;
             }
         )
