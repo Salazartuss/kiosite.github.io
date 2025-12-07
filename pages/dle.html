@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../ressources/pictures/favicon.ico" type = "image/x-icon">
+    <nav>
+        <div class="nav-barre">
+            <a href="home.html">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="dle.html">DLE</a>
+        </div>
+    </nav>
+    <h1 class="titre">Kionassos DLE</h1>
+</head>
+<body>
+
+<div class="gameStart">
+    <button id="starter" onclick="startGame()">Start the game</button>
+</div>
+
+<div class="gameCore">
+    <label for="guess">Guess : </label>
+    <input type="text" id="guess">
+    <button type="button" onclick="result()" class="button">Click Me! </button>
+</div>
+
+<div id="soluce">
+    <p>Soluce : </p>
+</div>
+
+
+
+
+
+<script src="../scripts/dle.js"></script>
+</body>
+</html>

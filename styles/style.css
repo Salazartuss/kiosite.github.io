@@ -1,0 +1,34 @@
+.nav-barre{
+    background: black;
+    padding: 10px 20px;
+    color: white;
+    a:visited{color:green;}
+    a:link {color:darkred;}
+    a:hover {color:deeppink;}
+    a:active{color: white;}
+    gap: 20px;
+    display: flex;
+}
+
+.titre{
+    align-self: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: darkslategrey;
+}
+
+.visible{
+    color:white;
+}
+
+.good{
+    background-color: green;
+    color: white;
+}
+.bad{
+    background-color: red;
+    color:white;
+}
