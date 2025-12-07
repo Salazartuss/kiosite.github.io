@@ -15,21 +15,64 @@ async function startGame(){
 const gameSoluce = startGame();
 
 
-function result(){
-    loadV2().then(data => {
-        const place = document.getElementById('soluce');
-        var name = -2;
-        gameSoluce.then(
-            soluce =>{
-                name = soluce;
-                const dasKeys = Object.keys(data);
-                const keyGet = 'Salazartuss';
-                const keyData = data[dasKeys[name]];
-                if(!keyData){return;}
 
-                let htmlContent = '<p>' + keyData[0]  +  " " + keyData[1]+ " " + keyData[2] +'</p>';
-                place.innerHTML = htmlContent;
+
+function verif(receivedValue, soluceValue){
+    return receivedValue.toLowerCase() === soluceValue.toLowerCase();
+};
+
+
+
+
+function mainGameLoop(){
+    document.getElementById('gameStart').innerHTML = "";
+    var win = false;
+    const tryButton = document.getElementById('tryButton');
+    const guessText = document.getElementById('guess');
+    const answerText = document.getElementById('soluce');
+    loadV2().then(data => {
+        gameSoluce.then(
+            soluces =>{
+                const soluceValue = Object.keys(data)[soluces];
+                tryButton.addEventListener("click", function() {
+
+
+                    var textValidity = "";
+                    var guessC = guessText.value.toLowerCase();
+                    if(Object.keys(data).includes(guessC)){
+
+
+                        if(verif(guessC, soluceValue)){
+                            textValidity = "good";
+                        }
+                        else{
+                            textValidity = "bad";
+                        }
+
+
+                        var name = "bad";
+                        var age = "bad";
+                        var gender = "bad";
+
+                        if(data[guessC][0] === data[soluceValue][0]){name = "good";}
+
+                        if(data[guessC][1] === data[soluceValue][1]){age = "good";}
+
+                        if(data[guessC][2]=== data[soluceValue][2]){gender = "good";}
+
+                        const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
+
+                        answerText.innerHTML =  neoText + "<br>" + answerText.innerHTML;
+                        guessText.value = "";
+
+
+
+
+                        if(verif(guessC, soluceValue)){document.getElementById("gameCore").innerHTML = "<p>Vous avez gagné, la réponse était " + soluceValue+ "</p>";}
+
+                    }
+                })
             }
         )
-    })
+    });
 }
