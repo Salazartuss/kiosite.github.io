@@ -33,10 +33,9 @@ function mainGameLoop(){
     loadV2().then(data => {
         gameSoluce.then(
             soluces =>{
-                document.getElementById('gameStart').innerHTML = "";
                 const soluceValue = Object.keys(data)[soluces];
                 tryButton.addEventListener("click", function() {
-
+                    document.getElementById('gameStart').innerHTML = "";
 
                     var textValidity = "";
                     var guessC = guessText.value.toLowerCase();
