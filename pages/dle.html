@@ -16,18 +16,18 @@
 </head>
 <body>
 
-<div class="gameStart">
-    <button id="starter" onclick="startGame()">Start the game</button>
+<div class="gameStart" id="gameStart">
+    <button id="starter" onclick="mainGameLoop()">Start the game</button>
 </div>
 
-<div class="gameCore">
+<div class="gameCore" id="gameCore">
     <label for="guess">Guess : </label>
     <input type="text" id="guess">
-    <button type="button" onclick="result()" class="button">Click Me! </button>
+    <button type="button" class="button" id="tryButton">Soumettre </button>
 </div>
 
 <div id="soluce">
-    <p>Soluce : </p>
+    <p></p>
 </div>
 
 
