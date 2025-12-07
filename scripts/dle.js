@@ -62,7 +62,12 @@ function mainGameLoop(){
 
                         const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
 
-                        answerText.innerHTML = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
+                        const pivot = document.createElement('div');
+                        
+                        pivot.innerHTM = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
+                        while(pivot.firstchild){
+                            answerText.appendChild(pivot.firstChild);
+                        }
                         guessText.value = "";
 
 
