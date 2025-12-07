@@ -64,7 +64,7 @@ function mainGameLoop(){
 
                         const pivot = document.createElement('div');
                         
-                        pivot.innerHTM = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
+                        pivot.innerHTML = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
                         
                         answerText.appendChild(pivot.firstChild);
                         
