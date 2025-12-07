@@ -65,9 +65,9 @@ function mainGameLoop(){
                         const pivot = document.createElement('div');
                         
                         pivot.innerHTM = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
-                        while(pivot.firstchild){
-                            answerText.appendChild(pivot.firstChild);
-                        }
+                        
+                        answerText.appendChild(pivot.firstChild);
+                        
                         guessText.value = "";
 
 
