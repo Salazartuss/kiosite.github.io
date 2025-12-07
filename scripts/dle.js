@@ -61,7 +61,7 @@ function mainGameLoop(){
                         if(data[guessC][2]=== data[soluceValue][2]){gender = "good";}
 
                         const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
-                        document.getElementById('gameStart').innerHTML = "";
+
                         answerText.innerHTML = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
                         guessText.value = "";
 
