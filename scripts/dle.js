@@ -35,10 +35,10 @@ function mainGameLoop(){
             soluces =>{
                 const soluceValue = Object.keys(data)[soluces];
                 tryButton.addEventListener("click", function() {
-                    
 
                     var textValidity = "";
                     var guessC = guessText.value.toLowerCase();
+                    guessText.value = "";
                     if(Object.keys(data).includes(guessC)){
 
 
@@ -62,17 +62,25 @@ function mainGameLoop(){
 
                         const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
 
-                        const pivot = document.createElement('div');
-                        
-                        pivot.innerHTML = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
-                        
-                        answerText.appendChild(pivot.firstChild);
-                        
-                        guessText.value = "";
+                        var pivot = document.createElement('p');
+
+                        pivot.innerHTML = neoText + "<br>" + answerText.innerHTML;;
+                        answerText.prepend(pivot.firstChild);;
 
 
 
-                        if(verif(guessC, soluceValue)){document.getElementById("gameCore").innerHTML = "<p>Vous avez gagné, la réponse était " + soluceValue+ "</p>";}
+
+
+
+
+
+
+                        if(verif(guessC, soluceValue)){
+                            while(document.getElementById("gameCore").firstChild){
+                                document.getElementById("gameCore").removeChild(document.getElementById("gameCore").firstChild);
+                            }
+                            pivot.innerHTML  = "<p>Vous avez gagné, la réponse était " + soluceValue+ "</p>";
+                            document.getElementById("gameCore").appendChild(pivot.firstChild);}
 
                     }
                 })
