@@ -39,6 +39,7 @@ function mainGameLoop(){
 
                     var textValidity = "";
                     var guessC = guessText.value.toLowerCase();
+                    guessText.value = "";
                     if(Object.keys(data).includes(guessC)){
 
 
@@ -63,7 +64,6 @@ function mainGameLoop(){
                         const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
 
                         answerText.innerHTML =  neoText + "<br>" + answerText.innerHTML;
-                        guessText.value = "";
 
 
 
