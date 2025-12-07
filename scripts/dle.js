@@ -35,12 +35,13 @@ function mainGameLoop(){
             soluces =>{
                 const soluceValue = Object.keys(data)[soluces];
                 tryButton.addEventListener("click", function() {
-                    document.getElementById('gameStart').innerHTML = "";
+                    
 
                     var textValidity = "";
                     var guessC = guessText.value.toLowerCase();
                     guessText.value = "";
                     if(Object.keys(data).includes(guessC)){
+                        document.getElementById('gameStart').innerHTML = "";
 
 
                         if(verif(guessC, soluceValue)){
