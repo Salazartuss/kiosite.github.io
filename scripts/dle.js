@@ -25,7 +25,7 @@ function verif(receivedValue, soluceValue){
 
 
 function mainGameLoop(){
-
+    document.getElementById('gameStart').innerHTML = "";
     var win = false;
     const tryButton = document.getElementById('tryButton');
     const guessText = document.getElementById('guess');
@@ -39,7 +39,6 @@ function mainGameLoop(){
 
                     var textValidity = "";
                     var guessC = guessText.value.toLowerCase();
-                    guessText.value = "";
                     if(Object.keys(data).includes(guessC)){
 
 
@@ -63,8 +62,8 @@ function mainGameLoop(){
 
                         const neoText = '<p> <span class="' + name +'">' + data[guessC][0] + '</span> <span class="' + age +'">' + data[guessC][1] + '</span> <span class="' + gender +'">' + data[guessC][2] + '</span></p>';
                         document.getElementById('gameStart').innerHTML = "";
-                        answerText.innerHTML = "<p>Chat</p>" + neoText + "<br>" + answerText.innerHTML;
-
+                        answerText.innerHTML = "<p>Chat</p>"  + "<br>" + answerText.innerHTML;
+                        guessText.value = "";
 
 
 
